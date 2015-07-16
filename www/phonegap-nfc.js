@@ -495,7 +495,10 @@ var nfc = {
       cordova.exec(win, fail, "NfcPlugin", "readMifare", [block]);
     },
     writeMifare: function (block, data, win, fail) {
-     cordova.exec(win, fail, "NfcPlugin", "writeMifare", [block, data]);
+      if(data === undefined || data === null){
+        data = '';
+      }
+     cordova.exec(win, fail, "NfcPlugin", "writeMifare", [block, String(data)]);
    }
 
 };

@@ -229,7 +229,8 @@ public class NfcPlugin extends CordovaPlugin implements NfcAdapter.OnNdefPushCom
                 }
                 mc.writePage(block+i, bs);
             }
-            callbackContext.success("OK");
+            byte[] response = mc.readPages(block);
+            callbackContext.success(Util.dataToString(response).trim());
         } catch (IOException e) {
             e.printStackTrace();
             callbackContext.error(e.getMessage());
