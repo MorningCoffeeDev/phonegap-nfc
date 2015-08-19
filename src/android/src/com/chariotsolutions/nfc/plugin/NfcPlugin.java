@@ -184,7 +184,7 @@ public class NfcPlugin extends CordovaPlugin implements NfcAdapter.OnNdefPushCom
                 callbackContext.error("Invalid Password");
                 return;
             }
-            InitNTAG213 initChip = new InitNTAG213(mc,data.getString(0));
+            InitNTAG213 initChip = new InitNTAG213(mc,data.getString(1));
             if(initChip.run()) {
                 callbackContext.success();
             }else{
