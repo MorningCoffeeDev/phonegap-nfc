@@ -220,6 +220,9 @@ public class NfcPlugin extends CordovaPlugin implements NfcAdapter.OnNdefPushCom
         } catch (IOException e) {
             e.printStackTrace();
             callbackContext.error(e.getMessage());
+        } catch (NumberFormatException e){
+            e.printStackTrace();
+            callbackContext.error("Invalid Password");
         } finally {
             try {
                 mc.close();
@@ -318,6 +321,9 @@ public class NfcPlugin extends CordovaPlugin implements NfcAdapter.OnNdefPushCom
         } catch (IOException e) {
             e.printStackTrace();
             callbackContext.error(e.getMessage());
+        } catch (NumberFormatException e){
+            e.printStackTrace();
+            callbackContext.error("Invalid Password");
         } finally {
             try {
                 mc.close();
@@ -366,6 +372,9 @@ public class NfcPlugin extends CordovaPlugin implements NfcAdapter.OnNdefPushCom
         } catch (IOException e) {
             e.printStackTrace();
             callbackContext.error(e.getMessage());
+        } catch (NumberFormatException e){
+            e.printStackTrace();
+            callbackContext.error("Invalid Password");
         } finally {
             try {
                 mc.close();
