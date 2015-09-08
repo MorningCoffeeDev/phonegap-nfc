@@ -279,12 +279,6 @@ public class NfcPlugin extends CordovaPlugin implements NfcAdapter.OnNdefPushCom
                 if (validResponse(response) ) {
                     return true;
                 }
-                sleep(500);
-            }
-            Log.d(TAG,Util.ByteArrayToHexString(PWD));
-            byte[] response = c.transceive(PWD);
-            if (validResponse(response) ) {
-                return true;
             }
         } catch (IOException e) {
             e.printStackTrace();
