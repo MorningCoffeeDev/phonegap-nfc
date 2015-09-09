@@ -208,7 +208,7 @@ public class NfcPlugin extends CordovaPlugin implements NfcAdapter.OnNdefPushCom
                 return;
             }
             if (!authenticate(mc, data.getString(0))) {
-                callbackContext.error("Invalid Password");
+                callbackContext.error("PWD_WRONG");
                 return;
             }
             InitNTAG213 initChip = new InitNTAG213(mc,data.getString(1));
@@ -222,7 +222,7 @@ public class NfcPlugin extends CordovaPlugin implements NfcAdapter.OnNdefPushCom
             callbackContext.error(e.getMessage());
         } catch (NumberFormatException e){
             e.printStackTrace();
-            callbackContext.error("Invalid Password");
+            callbackContext.error("PWD_WRONG");
         } finally {
             try {
                 mc.close();
@@ -306,7 +306,7 @@ public class NfcPlugin extends CordovaPlugin implements NfcAdapter.OnNdefPushCom
             int block = data.getInt(0);
             mc.connect();
             if (!authenticate(mc, data.getString(1))) {
-                callbackContext.error("Invalid Password");
+                callbackContext.error("PWD_WRONG");
                 return;
             }
             byte[] response = mc.readPages(block);
@@ -317,7 +317,7 @@ public class NfcPlugin extends CordovaPlugin implements NfcAdapter.OnNdefPushCom
             callbackContext.error(e.getMessage());
         } catch (NumberFormatException e){
             e.printStackTrace();
-            callbackContext.error("Invalid Password");
+            callbackContext.error("PWD_WRONG");
         } finally {
             try {
                 mc.close();
@@ -337,7 +337,7 @@ public class NfcPlugin extends CordovaPlugin implements NfcAdapter.OnNdefPushCom
             content = content == null ? "" : content;
             mc.connect();
             if (!authenticate(mc, data.getString(2))) {
-                callbackContext.error("Invalid Password");
+                callbackContext.error("PWD_WRONG");
                 return;
             }
             byte[] bytes = content.getBytes();
@@ -368,7 +368,7 @@ public class NfcPlugin extends CordovaPlugin implements NfcAdapter.OnNdefPushCom
             callbackContext.error(e.getMessage());
         } catch (NumberFormatException e){
             e.printStackTrace();
-            callbackContext.error("Invalid Password");
+            callbackContext.error("PWD_WRONG");
         } finally {
             try {
                 mc.close();
