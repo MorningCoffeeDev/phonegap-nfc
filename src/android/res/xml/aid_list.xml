@@ -58,7 +58,7 @@ limitations under the License.
     -->
 
     <aid-group android:description="@string/app_name" android:category="other">
-        <aid-filter android:name="F222222228"/>
+        <aid-filter android:name="F222222230"/>
     </aid-group>
 
 </host-apdu-service>

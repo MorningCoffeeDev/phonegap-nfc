@@ -41,7 +41,7 @@ import java.util.Arrays;
 public class CardService extends HostApduService {
     private static final String TAG = "CardService";
     // AID for our loyalty card service.
-    private static final String SAMPLE_LOYALTY_CARD_AID = "F222222228";
+    private static final String SAMPLE_LOYALTY_CARD_AID = "F222222230";
     // ISO-DEP command HEADER for selecting an AID.
     // Format: [Class | Instruction | Parameter 1 | Parameter 2]
     private static final String SELECT_APDU_HEADER = "00A40400";
